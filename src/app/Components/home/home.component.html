@@ -25,26 +25,14 @@
           <td>{{ employee.lname }}</td>
           <td>{{ employee.age }}</td>
         </tr> -->
-          <tr>
-            <td>1</td>
-            <td>Ali</td>
-            <td>Ibrahim</td>
-            <td>Ali@gmail.com</td>
-            <td>25</td>
-            <td>Mansoura</td>
-            <td>Ali_Street</td>
-            <td><button href="#" class="btn btn-info">view</button></td>
-            <td><button href="#" class="btn btn-primary">update</button></td>
-            <td><button href="#" class="btn btn-danger">delete</button></td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Omar</td>
-            <td>Ibrahim</td>
-            <td>Omar@gmail.com</td>
-            <td>12</td>
-            <td>Tanta</td>
-            <td>Omar_Street</td>
+          <tr *ngFor="let usr of users">
+            <td>{{usr.id}}</td>
+            <td>{{usr.fname}}</td>
+            <td>{{usr.lname}}</td>
+            <td>{{usr.email}}</td>
+            <td>{{usr.age}}</td>
+            <td>{{usr.address.city}}</td>
+            <td>{{usr.address.street}}</td>
             <td><button href="#" class="btn btn-info">view</button></td>
             <td><button href="#" class="btn btn-primary">update</button></td>
             <td><button href="#" class="btn btn-danger">delete</button></td>
