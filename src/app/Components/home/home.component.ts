@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   users;
   page = 1;
   count = 0;
-  tableSize = 5;
+  tableSize = 3;
   tableSizes = [3, 6, 9, 12];
   fetchUsers(): void {
     this.usrService.getAllUsers().subscribe(

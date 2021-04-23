@@ -4,20 +4,10 @@
   </button>
 </p>
 
-<div class="d-flex flex-row-reverse bd-highlight mb-2">
-  <div class="p-2 bd-highlight">
-    <select (change)="onTableSizeChange($event)" class="custom-select">
-      <option *ngFor="let size of tableSizes" [ngValue]="size">
-        {{ size }}
-      </option>
-    </select>
-  </div>
-</div>
-
 <div class="container">
   <div class="row">
-    <div class="col-12 mt-3 mb-5">
-      <table class="table table-info table-bordered text-center mt-1">
+    <div class="col-12">
+      <table class="table table-info table-bordered text-center">
         <thead class="thead-dark">
           <tr>
             <th scope="col">#ID</th>
@@ -78,14 +68,33 @@
           </tr>
         </tbody>
       </table>
-      <div class="d-flex justify-content-center">
-        <pagination-controls
-          responsive="true"
-          previousLabel="Prev"
-          nextLabel="Next"
-          (pageChange)="onTableDataChange($event)"
-        >
-        </pagination-controls>
+
+        <div class="row">
+          <div class="mt-2 col-3 offset-3">
+            <div class="d-flex justify-content-center">
+              <pagination-controls
+                responsive="true"
+                previousLabel="Prev"
+                nextLabel="Next"
+                (pageChange)="onTableDataChange($event)"
+              >
+              </pagination-controls>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="d-flex flex-row-reverse bd-highlight mb-2">
+              <div class="p-2 bd-highlight">
+                <select
+                  (change)="onTableSizeChange($event)"
+                  class="custom-select"
+                >
+                  <option *ngFor="let size of tableSizes" [ngValue]="size">
+                    {{ size }}
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
       </div>
     </div>
   </div>
