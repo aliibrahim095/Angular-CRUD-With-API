@@ -1,5 +1,7 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from 'src/app/Services/users.service';
+
 
 @Component({
   selector: 'app-adduser',
@@ -7,11 +9,9 @@ import { UsersService } from 'src/app/Services/users.service';
   styles: [],
 })
 export class AdduserComponent implements OnInit {
-  constructor(private myService: UsersService) {}
+  constructor(private myService: UsersService,private router:Router) {}
 
   ngOnInit(): void {}
-
-  id: number = 4;
   fname;
   lname;
   email;
@@ -19,8 +19,9 @@ export class AdduserComponent implements OnInit {
   city;
   street;
 
+
+
   user: {
-    id: number;
     fname: string;
     lname: string;
     email: string;
@@ -32,7 +33,6 @@ export class AdduserComponent implements OnInit {
   };
   AddNewUser() {
     this.user = {
-      id: this.id,
       fname: this.fname,
       lname: this.lname,
       email: this.email,
@@ -40,6 +40,7 @@ export class AdduserComponent implements OnInit {
       address: { city: this.city, street: this.street }
     };
    this.myService.AddNewUser(this.user).subscribe();
+    this.router.navigateByUrl('home');
   //  console.log(this.user);
   }
 }

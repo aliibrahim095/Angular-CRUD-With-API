@@ -1,27 +1,39 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { UsersService } from 'src/app/Services/users.service';
 import { Router } from '@angular/router';
+import { EventEmitter } from 'selenium-webdriver';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styles: [
-  ]
+  styles: [],
 })
 export class HomeComponent implements OnInit {
-
-  constructor(private usrService:UsersService,private router:Router) { }
+  constructor(private usrService: UsersService, private router: Router) {}
   users;
   ngOnInit(): void {
     this.usrService.getAllUsers().subscribe(
-      (res)=>{
-        this.users=res; 
+      (res) => {
+        this.users = res;
       },
-      (err)=>{console.log(err);}
-   
-      )
+      (err) => {
+        console.log(err);
+      }
+    );
   }
-  goToAddUser(){
+  goToAddUser() {
     this.router.navigateByUrl('adduser');
+  }
+
+   viewUser(id) {
+    this.router.navigateByUrl(`users/${id}`);
+  }
+
+  updateUser() {}
+  deleteUser(id) {
+    this.usrService.DeleteUserById(id).subscribe((data) => {
+      console.log(data);
+    });
+    window.location.reload()
   }
 }

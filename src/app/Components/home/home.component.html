@@ -1,5 +1,7 @@
 <p class="text-center mt-5">
-  <button class="btn btn-success text-center" (click)="goToAddUser()">Add New Std.</button>
+  <button class="btn btn-success text-center" (click)="goToAddUser()">
+    Add New Std.
+  </button>
 </p>
 <div class="container">
   <div class="row">
@@ -19,23 +21,31 @@
           </tr>
         </thead>
         <tbody>
-          <!-- <tr *ngFor="let employee of employees">
-          <td>{{ employee.id }}</td>
-          <td>{{ employee.fname }}</td>
-          <td>{{ employee.lname }}</td>
-          <td>{{ employee.age }}</td>
-        </tr> -->
           <tr *ngFor="let usr of users">
-            <td>{{usr.id}}</td>
-            <td>{{usr.fname}}</td>
-            <td>{{usr.lname}}</td>
-            <td>{{usr.email}}</td>
-            <td>{{usr.age}}</td>
-            <td>{{usr.address.city}}</td>
-            <td>{{usr.address.street}}</td>
-            <td><button href="#" class="btn btn-info">view</button></td>
-            <td><button href="#" class="btn btn-primary">update</button></td>
-            <td><button href="#" class="btn btn-danger">delete</button></td>
+            <td>{{ usr.id }}</td>
+            <td>{{ usr.fname }}</td>
+            <td>{{ usr.lname }}</td>
+            <td>{{ usr.email }}</td>
+            <td>{{ usr.age }}</td>
+            <td>{{ usr.address.city }}</td>
+            <td>{{ usr.address.street }}</td>
+            <td>
+              <button class="btn btn-info" (click)="viewUser(usr.id)">view</button>
+            </td>
+            <td>
+              <button href="#" class="btn btn-primary" (click)="updateUser()">
+                update
+              </button>
+            </td>
+            <td>
+              <button
+                href="#"
+                class="btn btn-danger"
+                (click)="deleteUser(usr.id)"
+              >
+                delete
+              </button>
+            </td>
           </tr>
         </tbody>
       </table>
