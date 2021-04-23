@@ -10,6 +10,7 @@ import { UpdateuserComponent } from './Components/updateuser/updateuser.componen
 import { ErrorpageComponent } from './Components/errorpage/errorpage.component';
 import { UserdetailsComponent } from './Components/userdetails/userdetails.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 // const routes:Routes=[
 //   {path:"",redirectTo:'home',pathMatch:"full"},
@@ -34,7 +35,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     // RouterModule.forRoot(routes),
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

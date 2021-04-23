@@ -11,6 +11,21 @@ import { EventEmitter } from 'selenium-webdriver';
 export class HomeComponent implements OnInit {
   constructor(private usrService: UsersService, private router: Router) {}
   users;
+  page = 1;
+  count = 0;
+  tableSize = 5;
+  tableSizes = [3, 6, 9, 12];
+  fetchUsers(): void {
+    this.usrService.getAllUsers().subscribe(
+      (res) => {
+        this.users = res;
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  }
+
   ngOnInit(): void {
     this.usrService.getAllUsers().subscribe(
       (res) => {
@@ -21,6 +36,24 @@ export class HomeComponent implements OnInit {
       }
     );
   }
+
+// 
+onTableDataChange(event){
+  this.page = event;
+  this.fetchUsers();
+}  
+
+onTableSizeChange(event): void {
+  this.tableSize = event.target.value;
+  this.page = 1;
+  this.fetchUsers();
+}  
+
+
+// 
+
+
+
   goToAddUser() {
     this.router.navigateByUrl('adduser');
   }

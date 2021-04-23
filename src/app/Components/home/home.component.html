@@ -3,6 +3,17 @@
     Add New Std.
   </button>
 </p>
+
+<div class="d-flex flex-row-reverse bd-highlight mb-2">
+  <div class="p-2 bd-highlight">
+    <select (change)="onTableSizeChange($event)" class="custom-select">
+      <option *ngFor="let size of tableSizes" [ngValue]="size">
+        {{ size }}
+      </option>
+    </select>
+  </div>
+</div>
+
 <div class="container">
   <div class="row">
     <div class="col-12 mt-3 mb-5">
@@ -21,7 +32,19 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let usr of users">
+          <tr
+            *ngFor="
+              let usr of users
+                | paginate
+                  : {
+                      itemsPerPage: tableSize,
+                      currentPage: page,
+                      totalItems: count
+                    };
+              let i = index
+            "
+            [class.active]="i == currentIndex"
+          >
             <td>{{ usr.id }}</td>
             <td>{{ usr.fname }}</td>
             <td>{{ usr.lname }}</td>
@@ -30,10 +53,16 @@
             <td>{{ usr.address.city }}</td>
             <td>{{ usr.address.street }}</td>
             <td>
-              <button class="btn btn-info" (click)="viewUser(usr.id)">view</button>
+              <button class="btn btn-info" (click)="viewUser(usr.id)">
+                view
+              </button>
             </td>
             <td>
-              <button href="#" class="btn btn-primary" (click)="updateUser(usr.id)">
+              <button
+                href="#"
+                class="btn btn-primary"
+                (click)="updateUser(usr.id)"
+              >
                 update
               </button>
             </td>
@@ -49,6 +78,15 @@
           </tr>
         </tbody>
       </table>
+      <div class="d-flex justify-content-center">
+        <pagination-controls
+          responsive="true"
+          previousLabel="Prev"
+          nextLabel="Next"
+          (pageChange)="onTableDataChange($event)"
+        >
+        </pagination-controls>
+      </div>
     </div>
   </div>
 </div>

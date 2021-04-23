@@ -32,6 +32,39 @@
         "street": "Olwy_street"
       },
       "id": 3
+    },
+    {
+      "fname": "Omar",
+      "lname": "Ibrahim",
+      "email": "Omar@gmail.com",
+      "age": 20,
+      "address": {
+        "city": "Mansoura",
+        "street": "Egypt"
+      },
+      "id": 4
+    },
+    {
+      "fname": "Ahmed",
+      "lname": "Ibrahim",
+      "email": "ahmed@gmail.com",
+      "age": 21,
+      "address": {
+        "city": "Mansoura",
+        "street": "Egypt"
+      },
+      "id": 5
+    },
+    {
+      "fname": "Ehab",
+      "lname": "Magdy",
+      "email": "ehab@gmail.com",
+      "age": 25,
+      "address": {
+        "city": "Mansoura",
+        "street": "Egypt"
+      },
+      "id": 6
     }
   ]
 }
