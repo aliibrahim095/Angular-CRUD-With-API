@@ -1,0 +1,37 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "fname": "Ali",
+            "lname": "Ibrahim",
+            "email": "aliibrahim095@outlook.com",
+            "age": 25,
+            "address": {
+                "city": "Mansoura",
+                "street": "Ali_Street"
+            }
+        },
+        {
+            "id": 2,
+            "fname": "Omar",
+            "lname": "Ibrahim",
+            "email": "omaribrahim095@outlook.com",
+            "age": 12,
+            "address": {
+                "city": "Tanta",
+                "street": "Omar_Street"
+            }
+        },
+        {
+            "id": 3,
+            "fname": "Ahmed",
+            "lname": "Ibrahim",
+            "email": "ahmedibrahim095@outlook.com",
+            "age": 20,
+            "address": {
+                "city": "Cairo",
+                "street": "Ahmed_Street"
+            }
+        }
+    ]
+}
