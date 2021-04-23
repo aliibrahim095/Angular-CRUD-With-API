@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
       <div class="col-12 mt-4">
-        <form class="text-light p-5">
+        <form class="text-light p-5" (ngSubmit)="AddNewUser()">
           <div class="form-group">
             <label for="fname">First Name</label>
             <input
@@ -10,6 +10,7 @@
               id="fname"
               placeholder="Enter your First Name "
               name="fname"
+              [(ngModel)]="fname"
             />
             <div class="text-danger">FirstName is Required</div>
           </div>
@@ -21,6 +22,7 @@
               id="lname"
               placeholder="Enter your Last Name "
               name="lname"
+              [(ngModel)]="lname"
             />
             <div class="text-danger">LastName is Required</div>
           </div>
@@ -32,6 +34,7 @@
               id="email"
               placeholder="Enter your Email "
               name="email"
+              [(ngModel)]="email"
             />
             <div class="text-danger">Email is Required</div>
           </div>
@@ -43,6 +46,7 @@
               id="age"
               placeholder="Enter your Age "
               name="age"
+              [(ngModel)]="age"
             />
             <div class="text-danger">
               Age is Required and betwwen 18 and 60
@@ -56,6 +60,7 @@
               id="city"
               placeholder="Enter your City"
               name="city"
+              [(ngModel)]="city"
             />
             <div class="text-danger">City is Required</div>
           </div>
@@ -67,6 +72,7 @@
               id="street"
               placeholder="Enter your Street"
               name="street"
+              [(ngModel)]="street"
             />
             <div class="text-danger">Street is Required</div>
           </div>
