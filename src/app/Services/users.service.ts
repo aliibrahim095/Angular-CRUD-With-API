@@ -22,4 +22,7 @@ export class UsersService {
    DeleteUserById(id){
     return this.myClient.delete(this.baseUrl+'/'+id);
   }
+  UpdateUserById(id,user){
+    return this.myClient.patch(this.baseUrl+'/'+id,user);
+  }
 }

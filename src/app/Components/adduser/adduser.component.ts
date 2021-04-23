@@ -22,13 +22,13 @@ export class AdduserComponent implements OnInit {
 
 
   user: {
-    fname: string;
-    lname: string;
-    email: string;
-    age: number;
+    fname: string,
+    lname: string,
+    email: string,
+    age: number,
     address: {
-      city: string;
-      street: string;
+      city: string,
+      street: string
     }
   };
   AddNewUser() {

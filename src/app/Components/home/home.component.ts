@@ -29,7 +29,9 @@ export class HomeComponent implements OnInit {
     this.router.navigateByUrl(`users/${id}`);
   }
 
-  updateUser() {}
+  updateUser(id){
+    this.router.navigateByUrl(`updateuser/${id}`);
+  }
   deleteUser(id) {
     this.usrService.DeleteUserById(id).subscribe((data) => {
       console.log(data);
