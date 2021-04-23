@@ -1,10 +1,11 @@
 <div class="container">
     <div class="row">
-      <div class="col-12 mt-4">
-        <form class="text-light p-5" (ngSubmit)="UpdateUser()">
+      <div class="col-12">
+        <form [formGroup]="Validation" class="text-light p-5" (ngSubmit)="UpdateUser()">
           <div class="form-group">
             <label for="fname">First Name</label>
             <input
+            formControlName="fname"
               type="text"
               class="form-control"
               id="fname"
@@ -12,11 +13,12 @@
               name="fname"
               [(ngModel)]="usertoupdate.fname"
             />
-            <div class="text-danger">FirstName is Required</div>
+            <div *ngIf="!isValidFname" class="text-danger">FirstName is Required</div>
           </div>
           <div class="form-group">
             <label for="lname">Last Name</label>
             <input
+            formControlName="lname"
               type="text"
               class="form-control"
               id="lname"
@@ -24,11 +26,12 @@
               name="lname"
               [(ngModel)]="usertoupdate.lname"
             />
-            <div class="text-danger">LastName is Required</div>
+            <div *ngIf="!isValidLname" class="text-danger">LastName is Required</div>
           </div>
           <div class="form-group">
             <label for="lname">Email</label>
             <input
+            formControlName="email"
               type="text"
               class="form-control"
               id="email"
@@ -36,11 +39,12 @@
               name="email"
               [(ngModel)]="usertoupdate.email"
             />
-            <div class="text-danger">Email is Required</div>
+            <div *ngIf="!isValidEmail" class="text-danger">Email is Invalid</div>
           </div>
           <div class="form-group">
             <label for="fname">Age</label>
             <input
+            formControlName="age"
               type="number"
               class="form-control"
               id="age"
@@ -48,13 +52,14 @@
               name="age"
               [(ngModel)]="usertoupdate.age"
             />
-            <div class="text-danger">
+            <div *ngIf="!isValidAge" class="text-danger">
               Age is Required and betwwen 18 and 60
             </div>
           </div>
           <div class="form-group">
             <label for="city">City</label>
             <input
+            formControlName="city"
               type="text"
               class="form-control"
               id="city"
@@ -62,11 +67,12 @@
               name="city"
               [(ngModel)]="usertoupdate.address.city"
             />
-            <div class="text-danger">City is Required</div>
+            <div *ngIf="!isValidCity" class="text-danger">City is Required</div>
           </div>
           <div class="form-group">
             <label for="street">Street</label>
             <input
+            formControlName="street"
               type="text"
               class="form-control"
               id="street"
@@ -74,7 +80,7 @@
               name="street"
               [(ngModel)]="usertoupdate.address.street"
             />
-            <div class="text-danger">Street is Required</div>
+            <div *ngIf="!isValidStreet" class="text-danger">Street is Required</div>
           </div>
           <div class="form-group">
             <input

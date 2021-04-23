@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "fname": "Ali",
+      "fname": "Aly",
       "lname": "Ibrahim",
       "email": "ali_ibrahim181@yahoo.com",
       "age": 25,
@@ -21,6 +21,17 @@
         "street": "Mohammed_Street"
       },
       "id": 2
+    },
+    {
+      "fname": "Olwy",
+      "lname": "Mamdouh",
+      "email": "Olwy@gmail.com",
+      "age": 25,
+      "address": {
+        "city": "Kafr Elsheikh",
+        "street": "Olwy_street"
+      },
+      "id": 3
     }
   ]
 }

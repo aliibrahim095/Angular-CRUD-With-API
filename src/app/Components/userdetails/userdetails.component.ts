@@ -24,7 +24,6 @@ export class UserdetailsComponent implements OnInit {
       }
     );
   }
-
   goHome(){
     this.router.navigateByUrl('home');
   }
