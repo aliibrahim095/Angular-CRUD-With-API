@@ -1,31 +1,20 @@
 {
   "users": [
     {
-      "fname": "Aly",
-      "lname": "Ibrahim",
-      "email": "ali_ibrahim181@yahoo.com",
-      "age": 25,
-      "address": {
-        "city": "Mansoura",
-        "street": "Ali_Street"
-      },
-      "id": 1
-    },
-    {
       "fname": "Mohammed",
       "lname": "Abdulrhman",
-      "email": "moabdulrhman@gmail.com",
+      "email": "moham@gmail.com",
       "age": 27,
       "address": {
         "city": "Beni Sweif",
-        "street": "Mohammed_Street"
+        "street": "Moha_Street"
       },
       "id": 2
     },
     {
-      "fname": "Olwy",
-      "lname": "Mamdouh",
-      "email": "Olwy@gmail.com",
+      "fname": "momo",
+      "lname": "Elbermawy",
+      "email": "bermawy@gmail.com",
       "age": 25,
       "address": {
         "city": "Kafr Elsheikh",
@@ -46,23 +35,12 @@
     },
     {
       "fname": "Ahmed",
-      "lname": "Ibrahim",
-      "email": "ahmed@gmail.com",
-      "age": 21,
+      "lname": "Behery",
+      "email": "behery@gmail.com",
+      "age": 24,
       "address": {
-        "city": "Mansoura",
-        "street": "Egypt"
-      },
-      "id": 5
-    },
-    {
-      "fname": "Ehab",
-      "lname": "Magdy",
-      "email": "ehab@gmail.com",
-      "age": 25,
-      "address": {
-        "city": "Mansoura",
-        "street": "Egypt"
+        "city": "Tanta",
+        "street": "Behery_Street"
       },
       "id": 6
     }

@@ -48,11 +48,7 @@ onTableSizeChange(event): void {
   this.page = 1;
   this.fetchUsers();
 }  
-
-
 // 
-
-
 
   goToAddUser() {
     this.router.navigateByUrl('adduser');
@@ -66,9 +62,11 @@ onTableSizeChange(event): void {
     this.router.navigateByUrl(`updateuser/${id}`);
   }
   deleteUser(id) {
-    this.usrService.DeleteUserById(id).subscribe((data) => {
-      console.log(data);
-    });
-    window.location.reload()
+    this.usrService.DeleteUserById(id).subscribe(
+      ()=>{
+        this.ngOnInit()
+      },
+      ()=>{}
+    );
   }
 }
